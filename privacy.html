@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>プライバシーポリシー｜バス停さん</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --blue-dark:  #2B6CB0;
+      --blue-mid:   #4A90D9;
+      --blue-light: #EAF3FC;
+      --blue-pale:  #F4F9FF;
+      --green:      #1a9e5c;
+      --text:       #1a2a3a;
+      --text-sub:   #5a7a9a;
+      --white:      #ffffff;
+      --radius:     16px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      background: var(--blue-pale);
+      color: var(--text);
+      font-size: 15px;
+      line-height: 1.8;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ヘッダー */
+    header {
+      background: var(--blue-dark);
+      padding: 32px 20px 28px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    header::before {
+      content: "";
+      position: absolute;
+      top: -40px; right: -40px;
+      width: 160px; height: 160px;
+      background: rgba(255,255,255,0.06);
+      border-radius: 50%;
+    }
+    header::after {
+      content: "";
+      position: absolute;
+      bottom: -30px; left: -20px;
+      width: 120px; height: 120px;
+      background: rgba(255,255,255,0.04);
+      border-radius: 50%;
+    }
+    .header-icon {
+      font-size: 40px;
+      margin-bottom: 8px;
+      display: block;
+    }
+    header h1 {
+      color: var(--white);
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+    }
+    header p {
+      color: rgba(255,255,255,0.7);
+      font-size: 12px;
+      margin-top: 6px;
+    }
+
+    /* メインコンテンツ */
+    main {
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 20px 16px 48px;
+    }
+
+    /* 安心バナー */
+    .trust-banner {
+      background: var(--green);
+      color: white;
+      border-radius: var(--radius);
+      padding: 16px 20px;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      box-shadow: 0 4px 16px rgba(26,158,92,0.25);
+    }
+    .trust-banner .icon {
+      font-size: 24px;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .trust-banner p {
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 1.6;
+    }
+
+    /* セクション */
+    .section {
+      background: var(--white);
+      border-radius: var(--radius);
+      padding: 20px;
+      margin-bottom: 12px;
+      box-shadow: 0 2px 8px rgba(43,108,176,0.07);
+    }
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 12px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--blue-light);
+    }
+    .section-num {
+      background: var(--blue-dark);
+      color: white;
+      font-size: 12px;
+      font-weight: 700;
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .section h2 {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--blue-dark);
+    }
+    .section p {
+      font-size: 14px;
+      color: var(--text);
+      line-height: 1.8;
+      margin-bottom: 8px;
+    }
+    .section p:last-child { margin-bottom: 0; }
+
+    /* 情報リスト */
+    .info-list {
+      list-style: none;
+      margin: 8px 0;
+    }
+    .info-list li {
+      font-size: 14px;
+      padding: 10px 14px;
+      background: var(--blue-light);
+      border-radius: 10px;
+      margin-bottom: 6px;
+      line-height: 1.6;
+    }
+    .info-list li:last-child { margin-bottom: 0; }
+    .info-list li strong {
+      color: var(--blue-dark);
+      display: block;
+      font-size: 13px;
+      margin-bottom: 2px;
+    }
+
+    /* 強調テキスト */
+    .highlight {
+      background: var(--blue-light);
+      border-left: 4px solid var(--blue-dark);
+      border-radius: 0 10px 10px 0;
+      padding: 12px 14px;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--blue-dark);
+      margin: 10px 0;
+      line-height: 1.7;
+    }
+
+    /* 箇条書き */
+    .bullet-list {
+      list-style: none;
+      margin: 6px 0;
+    }
+    .bullet-list li {
+      font-size: 14px;
+      padding: 6px 0 6px 20px;
+      position: relative;
+      color: var(--text);
+      line-height: 1.7;
+    }
+    .bullet-list li::before {
+      content: "•";
+      position: absolute;
+      left: 6px;
+      color: var(--blue-mid);
+      font-weight: 700;
+    }
+
+    /* 連絡先 */
+    .contact-card {
+      background: var(--blue-light);
+      border-radius: 12px;
+      padding: 14px 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 8px;
+    }
+    .contact-card .mail-icon {
+      font-size: 22px;
+    }
+    .contact-card a {
+      color: var(--blue-dark);
+      font-size: 14px;
+      font-weight: 500;
+      text-decoration: none;
+      word-break: break-all;
+    }
+
+    /* フッター */
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: var(--text-sub);
+      font-size: 12px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <span class="header-icon">🚌</span>
+  <h1>プライバシーポリシー</h1>
+  <p>バス停さん｜最終更新日：2026年5月15日</p>
+</header>
+
+<main>
+
+  <div class="trust-banner">
+    <span class="icon">🔒</span>
+    <p>バス停さんは、<strong>誰が使ったかを記録しません。</strong><br>個人を特定できる情報は一切取得・保存しないので、安心してご利用ください。</p>
+  </div>
+
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num">1</div>
+      <h2>取得する情報</h2>
+    </div>
+    <p>本サービスでは、以下の情報のみを取得します。</p>
+    <ul class="info-list">
+      <li><strong>📍 位置情報</strong>みなさまがLINEで送信した現在地情報</li>
+      <li><strong>🕐 利用履歴</strong>検索されたバス停名、利用日時、曜日</li>
+    </ul>
+    <div class="highlight">
+      LINEユーザーIDその他、個人を特定できる情報は一切取得・保存しません。お名前・電話番号・メールアドレスも取得しません。
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num">2</div>
+      <h2>利用目的</h2>
+    </div>
+    <ul class="bullet-list">
+      <li>現在地周辺のバス停・時刻表の検索と表示</li>
+      <li>サービスの改善・不具合の調査</li>
+    </ul>
+    <p style="margin-top:10px;">位置情報はバス停の検索にのみ使用します。利用傾向はサービス改善のため統計的に把握しますが、特定の個人の行動を追跡することはありません。</p>
+  </div>
+
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num">3</div>
+      <h2>第三者への提供</h2>
+    </div>
+    <p>取得した情報は、以下の場合を除き第三者に提供しません。</p>
+    <ul class="bullet-list">
+      <li>法令に基づく場合</li>
+      <li>ご本人の同意がある場合</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num">4</div>
+      <h2>情報の管理</h2>
+    </div>
+    <p>取得した情報はアクセス制限を設けた管理システムにて保管しています。個人を特定できる情報とは結びついていないため、特定の方の利用状況を把握することはできません。</p>
+  </div>
+
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num">5</div>
+      <h2>同意</h2>
+    </div>
+    <p>本サービスをご利用いただいた時点で、本プライバシーポリシーに同意いただいたものとみなします。</p>
+  </div>
+
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num">6</div>
+      <h2>ポリシーの変更</h2>
+    </div>
+    <p>本ポリシーは変更する場合があります。重要な変更がある場合は、LINEのチャットにてお知らせします。</p>
+  </div>
+
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num">7</div>
+      <h2>お問い合わせ</h2>
+    </div>
+    <p>ご質問・ご意見はお気軽にどうぞ。</p>
+    <div class="contact-card">
+      <span class="mail-icon">✉️</span>
+      <a href="mailto:bus.stop.san@gmail.com">bus.stop.san@gmail.com</a>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  © 2025 バス停さん
+</footer>
+
+</body>
+</html>
